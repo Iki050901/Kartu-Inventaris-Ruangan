@@ -1,0 +1,215 @@
+html, body{
+    margin: 0;
+}
+
+/* login */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* height: 100vh; Memastikan tinggi body sesuai dengan viewport */
+}
+
+.row img{
+    padding: 25px;
+}
+
+/* .logo-login{
+    display: flex;
+    align-items: center;
+} */
+
+.logo-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mengatur agar logo dan judul terletak di tengah horizontal */
+    justify-content: center; /* Mengatur agar logo dan judul terletak di tengah vertikal */
+    width: 50%;
+    /* left: 104px;   */
+}
+
+.logo-login img {
+    align-items: center;
+}
+
+.form-login{
+    display: flex; /* Menggunakan flex untuk memusatkan konten di dalamnya */
+    flex: 1; /* Sisi kanan akan menempati ruang yang tersisa */
+    flex-direction: column;
+    align-items: center; /* Memusatkan konten vertikal di dalam sisi kanan */
+    justify-content: center; /* Memusatkan konten horizontal di dalam sisi kanan */
+    margin-bottom: 40px;
+}
+
+/* Mengatur label input */
+.form-login label {
+    display: block; /* Menampilkan label sebagai blok */
+    margin-bottom: 10px; /* Jarak antara label dan input */
+    /* font-weight: bold; Menebalkan font label */
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    
+}
+
+/* Mengatur input teks dan password */
+.form-login input {
+    width: 415px;
+    height: 35px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 27px; /* Jarak antara input */
+    border: 3px solid #2284DF; /* Border input */
+    border-radius: 10px; /* Sudut membulat input */
+    font-size: 18px;
+    color: #888;
+}
+
+.form-login input::placeholder {
+    color: #888; /* Warna placeholder */
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    
+}
+
+/* Mengatur tombol submit */
+.form-login .btn-submit {
+    width: 460px;
+    height: 60px;
+    padding: 10px 20px 10px 20px;
+    background-color: #2284DF; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    border: none; /* Menghapus border default */
+    border-radius: 10px; /* Sudut membulat tombol */
+    font-size: 20px; /* Ukuran font tombol */
+    cursor: pointer; /* Menampilkan kursor pointer saat hover */
+}
+
+.form-login .btn-submit button:hover {
+    background-color: #207cd3; /* Warna latar belakang tombol saat hover */
+}
+
+.form-login h5{
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.16em;
+    text-align: center;
+    
+}
+
+/* Mengatur container password */
+.password-container {
+    position: relative; /* Posisi relatif agar tombol bisa diposisikan absolut */
+    max-width: 400px; /* Lebar maksimum container */
+}
+
+/* Mengatur input password */
+.password-container input {
+    width: 460px;
+    height: 60px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 15px; /* Jarak antara input */
+    border: 3px solid #2284DF; /* Border input */
+    border-radius: 10px; /* Sudut membulat input */
+    font-size: 18px;
+    color: #888;
+
+    padding-right: 60px; /* Ruang untuk tombol di sebelah kanan input */
+    box-sizing: border-box; /* Memastikan padding dan border tidak menambah lebar total */
+}
+
+/* Mengatur tombol show/hide password */
+.password-container .password-toggle {
+    position: absolute; /* Posisi absolut di dalam container relatif */
+    right: 1px; /* Jarak dari sisi kanan input */
+    top: 33%; /* Memusatkan vertikal pada input */
+    transform: translateY(-50%); /* Menyelaraskan tombol vertikal */
+    background-color: transparent; /* Latar belakang transparan */
+    border: none; /* Menghapus border default */
+    cursor: pointer; /* Menampilkan kursor pointer saat hover */
+    color: #007bff; /* Warna teks tombol */
+
+}
+
+.msg-error-login{
+    color: red;
+}
+
+/* Mengatur tampilan sidebar */
+.sidebar {
+    width: 250px;
+    transition: width 0.3s;
+    min-height: 100vh;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+    padding: 10px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: font-size 0.3s;
+}
+
+.sidebar.collapsed .nav-link {
+    font-size: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Tombol collapse */
+#sidebarCollapse {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Mengatur tampilan konten utama */
+.content {
+    transition: margin-left 0.3s;
+}
+
+.content.collapsed {
+    margin-left: 60px;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Mengatur tampilan card dashboard */
+.card-dashboard {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-dashboard .card-title {
+    font-size: 18px;
+    color: #007bff;
+}
+
+.card-dashboard .card-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+

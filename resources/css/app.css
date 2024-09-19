@@ -1,0 +1,94 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* login */
+.login-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;
+}
+
+.login{
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    padding: 215.5px 100px 212.9px 104px;
+    width: 1280px;
+    box-sizing: border-box;
+
+}
+
+/* html{
+    width: 1280px;
+    height: 832px;
+    top: 1033px;
+    left: 100px;
+    gap: 0px;
+    opacity: 0px;
+    
+} */
+
+.Frame-52811{
+    /* width: 611px;
+    height: 832px;
+    padding: 222px 38px 222.88px 37px;
+    gap: 0px;
+    opacity: 0px;     */
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.Frame-52811 img{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+/* .Frame-52811 .judul{
+    width: 536px;
+    height: 74px;
+    top: 535.12px;
+    left: 37px;
+    gap: 0px;
+    opacity: 0px;   
+} */
+
+.Frame-52811 h1{
+    /* font-family: Arial; */
+    /* font-family: 'Arial', 'Roboto Condensed'; */
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 50.77px;
+    letter-spacing: 0.16em;
+    text-align: center;    
+    color: #2284DF;    ;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+}
+
+.password-toggle svg {
+    width: 24px;
+    height: 24px;
+}
