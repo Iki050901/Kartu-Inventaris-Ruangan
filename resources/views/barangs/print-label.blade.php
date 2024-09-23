@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,37 +12,52 @@
         @media print {
             @page {
                 size: 570mm 400mm;
-                margin: 0;
+                margin: 30px;
             }
+
             body {
                 margin: 0;
             }
+
             .print-container {
-                width: 570mm; /* Full width of the page */
-                height: 400mm; /* Full height of the page */
+                width: 550mm;
+                /* Full width of the page */
+                height: 300mm;
+                /* Full height of the page */
                 margin: 0;
-                padding: 50mm; /* Slight padding */
+                padding: 10mm;
+                /* Slight padding */
                 border: 1px solid black;
                 border-radius: 8px;
                 background: white;
                 box-sizing: border-box;
             }
+
             .header-logo {
-                width: 60mm; /* Smaller logo size */
+                width: 60mm;
+                /* Smaller logo size */
                 height: 60mm;
             }
+
             .header-title {
-                font-size: 50pt; /* Adjusted font size for the title */
-                line-height: 1.2; /* Adjust line height */
-                margin: 0; /* Remove margin */
+                font-size: 50pt;
+                /* Adjusted font size for the title */
+                line-height: 1.2;
+                /* Adjust line height */
+                margin: 0;
+                /* Remove margin */
             }
+
             .detail-table td {
-                font-size: 40pt; /* Adjusted font size for table content */
-                padding: 18mm 0; /* Increased spacing between rows */
+                font-size: 40pt;
+                /* Adjusted font size for table content */
+                padding: 18mm 0;
+                /* Increased spacing between rows */
             }
         }
     </style>
 </head>
+
 <body class="font-sans bg-gray-100">
     <div class="print-container mx-auto bg-white">
         <!-- Header Section -->
@@ -89,4 +105,5 @@
         };
     </script>
 </body>
+
 </html>
