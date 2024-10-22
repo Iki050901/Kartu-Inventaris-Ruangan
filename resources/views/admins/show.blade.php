@@ -12,7 +12,7 @@
             <p class="text-gray-700"><span class="font-semibold">Nama:</span> {{ $admin->user->name }}</p>
             <p class="text-gray-700"><span class="font-semibold">Jabatan:</span> {{ $admin->jabatan }}</p>
             <p class="text-gray-700"><span class="font-semibold">Email:</span> {{ $admin->user->email }}</p>
-            <p class="text-gray-700"><span class="font-semibold">Unit:</span> {{ $admin->unit->kantor }}</p>
+            <p class="text-gray-700"><span class="font-semibold">Instansi:</span> {{ $admin->unit->kantor }}</p>
             <p class="text-gray-700"><span class="font-semibold">Password:</span> ********</p>
         </div>
     </div>

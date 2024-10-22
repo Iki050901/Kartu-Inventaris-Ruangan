@@ -5,18 +5,18 @@
 
     <!-- Tombol Kembali -->
     <div class="mb-4">
-        <h1 class="font-arial mb-6 font-extrabold" style="font-size: 35px; line-height: 52px; text-align: left; color:#2284DF">DATA KANTOR</h1>
+        <h1 class="font-arial mb-6 font-extrabold" style="font-size: 35px; line-height: 52px; text-align: left; color:#2284DF">DATA INSTANSI</h1>
     </div>
 
     <!-- Form Tambah Unit dalam Card -->
     <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">Tambah Kantor</h2>
+        <h2 class="text-2xl font-bold mb-4">Tambah Instansi</h2>
         
         <form action="{{ route('units.store') }}" method="POST">
             @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                 <div class="form-group">
-                    <label for="kantor" class="block text-gray-700">Nama Kantor:</label>
+                    <label for="kantor" class="block text-gray-700">Nama Instansi:</label>
                     <input type="text" id="kantor" name="kantor" class="form-control border rounded w-full p-2" value="{{ old('kantor') }}">
                     @error('kantor')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="email_kantor" class="block text-gray-700">Email Kantor:</label>
+                    <label for="email_kantor" class="block text-gray-700">Email Instansi:</label>
                     <input type="email" id="email_kantor" name="email_kantor" class="form-control border rounded w-full p-2" value="{{ old('email_kantor') }}">
                     @error('email_kantor')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="alamat_kantor" class="block text-gray-700">Alamat Kantor:</label>
+                    <label for="alamat_kantor" class="block text-gray-700">Alamat Instansi:</label>
                     <input type="text" id="alamat_kantor" name="alamat_kantor" class="form-control border rounded w-full p-2" value="{{ old('alamat_kantor') }}">
                     @error('alamat_kantor')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <h3 class="text-xl font-semibold mb-4">Kepala Dinas</h3>
+            <h3 class="text-xl font-semibold mb-4">Kepala Instansi</h3>
 
             <h4 class="text-lg font-semibold mb-2">Pejabat 1</h4>
 

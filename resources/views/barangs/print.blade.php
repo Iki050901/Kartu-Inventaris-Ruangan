@@ -196,8 +196,8 @@
 
                         <!-- Ceklis keadaan barang -->
                         <td class="border border-black-300 px-1 py-1">@if($item->keadaan_barang == 'baik')✔@endif</td>
-                        <td class="border border-black-300 px-1 py-1">@if($item->keadaan_barang == 'kurang baik')✔@endif</td>
-                        <td class="border border-black-300 px-1 py-1">@if($item->keadaan_barang == 'buruk')✔@endif</td>
+                        <td class="border border-black-300 px-1 py-1">@if($item->keadaan_barang == 'kurang_baik')✔@endif</td>
+                        <td class="border border-black-300 px-1 py-1">@if($item->keadaan_barang == 'rusak')✔@endif</td>
 
                         <td class="border border-black-300 px-1 py-1">{{ $item->keterangan_mutasi }}</td>
                     </tr>

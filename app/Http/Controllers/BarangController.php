@@ -54,17 +54,17 @@ class BarangController extends Controller
             $query->where('id', $unitSatuanKerjaId);
         })->count();
     
-        $jumlahBaik = Barang::where('keadaan_barang', 'Baik')
+        $jumlahBaik = Barang::where('keadaan_barang', 'baik')
             ->whereHas('ruangan.unitSatuanKerja', function ($query) use ($unitSatuanKerjaId) {
                 $query->where('id', $unitSatuanKerjaId);
             })->count();
     
-        $jumlahKurangBaik = Barang::where('keadaan_barang', 'Kurang Baik')
+        $jumlahKurangBaik = Barang::where('keadaan_barang', 'kurang_baik')
             ->whereHas('ruangan.unitSatuanKerja', function ($query) use ($unitSatuanKerjaId) {
                 $query->where('id', $unitSatuanKerjaId);
             })->count();
     
-        $jumlahBuruk = Barang::where('keadaan_barang', 'Buruk')
+        $jumlahBuruk = Barang::where('keadaan_barang', 'rusak')
             ->whereHas('ruangan.unitSatuanKerja', function ($query) use ($unitSatuanKerjaId) {
                 $query->where('id', $unitSatuanKerjaId);
             })->count();

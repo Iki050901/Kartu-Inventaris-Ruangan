@@ -37,7 +37,7 @@
             <h2 class="text-2xl font-semibold text-gray-700 mb-4">Informasi Unit</h2>
 
             <div class="mb-4">
-                <label for="unit_id" class="block text-gray-700 font-semibold">Pilih Unit</label>
+                <label for="unit_id" class="block text-gray-700 font-semibold">Pilih Instansi</label>
                 <select name="unit_id" id="unit_id" class="mt-1 block w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500">
                     @foreach($units as $unit)
                         <option value="{{ $unit->id }}" {{ $unit->id == $admin->unit_id ? 'selected' : '' }}>

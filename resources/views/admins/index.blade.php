@@ -69,7 +69,7 @@
                         <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Nama</th>
                         <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Jabatan</th>
                         <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Email</th>
-                        <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Unit</th>
+                        <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Instansi</th>
                         <th class="px-6 py-2 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Aksi</th>
                     </tr>
                 </thead>

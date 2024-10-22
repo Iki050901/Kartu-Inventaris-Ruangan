@@ -39,7 +39,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="unit_id" class="block text-gray-700">Pilih Unit:</label>
+                        <label for="unit_id" class="block text-gray-700">Pilih Instansi:</label>
                         <select name="unit_id" id="unit_id" class="form-control border rounded w-full p-2">
                             @foreach($units as $unit)
                             <option value="{{ $unit->id }}">{{ $unit->kantor }}</option>

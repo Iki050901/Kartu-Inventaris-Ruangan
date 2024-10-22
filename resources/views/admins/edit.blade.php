@@ -26,7 +26,7 @@
         </div>
 
         <div>
-            <label for="unit_id" class="block text-sm font-medium text-gray-700">Pilih Unit</label>
+            <label for="unit_id" class="block text-sm font-medium text-gray-700">Pilih Instansi</label>
             <select name="unit_id" class="mt-1 block w-3/4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3">
                 @foreach($units as $unit)
                     <option value="{{ $unit->id }}" {{ $unit->id == $admin->unit_id ? 'selected' : '' }}>

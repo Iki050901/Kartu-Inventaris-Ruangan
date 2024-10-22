@@ -90,8 +90,8 @@
             <thead style="background-color:#A6CEF2">
                 <tr>
                     <th rowspan="2" class="border border-black px-4 py-2">No</th>
-                    <th rowspan="2" class="border border-black px-4 py-2">Nama Unit</th>
-                    <th rowspan="2" class="border border-black px-4 py-2">Jumlah Unit Kerja</th>
+                    <th rowspan="2" class="border border-black px-4 py-2">Nama Instansi</th>
+                    <th rowspan="2" class="border border-black px-4 py-2">Jumlah Satuan Kerja</th>
                     <th rowspan="2" class="border border-black px-4 py-2">Jumlah Ruangan</th>
                     <th rowspan="2" class="border border-black px-4 py-2">Jumlah Barang</th>
                     <th colspan="3" class="border border-black px-4 py-2 text-center">Kondisi Barang</th>

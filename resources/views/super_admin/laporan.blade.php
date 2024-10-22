@@ -62,8 +62,8 @@
                     <thead style="background-color:#A6CEF2">
                         <tr>
                             <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">No</th>
-                            <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Nama Unit</th>
-                            <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Jumlah Unit Kerja</th>
+                            <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Nama Instansi</th>
+                            <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Jumlah Satuan Kerja</th>
                             <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Jumlah Ruangan</th>
                             <th rowspan="2" class="border border-gray-300 px-4 py-2 text-left">Jumlah Barang</th>
                             <th colspan="3" class="border border-gray-300 px-4 py-2 text-center">Kondisi Barang</th>
@@ -84,7 +84,7 @@
                             <td class="border border-gray-300 px-4 py-2 text-center">{{ $unit->jumlah_barang }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-green-600">{{ $unit->barang_baik }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-yellow-600">{{ $unit->barang_kurang_baik }}</td>
-                            <td class="border border-gray-300 px-4 py-2 text-center text-red-600">{{ $unit->barang_buruk }}</td>
+                            <td class="border border-gray-300 px-4 py-2 text-center text-red-600">{{ $unit->barang_buruk}}</td>
                         </tr>
                         @endforeach
                     </tbody>
