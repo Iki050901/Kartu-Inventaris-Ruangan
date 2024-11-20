@@ -47,9 +47,9 @@ class HomeController extends Controller
             $tahunPembelian = $barangData->pluck('tahun')->unique();
             $jumlahBaik = $barangData->where('keadaan_barang', 'baik')->pluck('jumlah');
             $jumlahKurangBaik = $barangData->where('keadaan_barang', 'kurang baik')->pluck('jumlah');
-            $jumlahBuruk = $barangData->where('keadaan_barang', 'buruk')->pluck('jumlah');
+            $jumlahRusak = $barangData->where('keadaan_barang', 'rusak')->pluck('jumlah');
 
-            return view('super_admin.home', compact('totalKantor', 'totalAdmin', 'tahunPembelian', 'jumlahBaik', 'jumlahKurangBaik', 'jumlahBuruk'));
+            return view('super_admin.home', compact('totalKantor', 'totalAdmin', 'tahunPembelian', 'jumlahBaik', 'jumlahKurangBaik', 'jumlahRusak'));
         } elseif ($user->role == 'admin') {
             $user = auth()->user();
             $admin = Admin::where('user_id', $user->id)->first();
@@ -78,7 +78,7 @@ class HomeController extends Controller
                     $query->where('unit_id', $unitId);
                 })->count();
 
-            $barangBuruk = Barang::where('keadaan_barang', 'buruk')
+            $barangRusak = Barang::where('keadaan_barang', 'rusak')
                 ->whereHas('ruangan.unitSatuanKerja', function ($query) use ($unitId) {
                     $query->where('unit_id', $unitId);
                 })->count();
@@ -92,7 +92,7 @@ class HomeController extends Controller
                 ->orderBy('tahun', 'asc')
                 ->get();
 
-            return view('admin.home', compact('totalSatuanKerja', 'totalBarang', 'totalPegawai', 'barangBaik', 'barangKurangBaik', 'barangBuruk', 'grafikTahun'));
+            return view('admin.home', compact('totalSatuanKerja', 'totalBarang', 'totalPegawai', 'barangBaik', 'barangKurangBaik', 'barangRusak', 'grafikTahun'));
             // return view('admin.home');
         } elseif ($user->role == 'user') {
             return redirect()->route('barangs.index');

@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg">
-            <a href="{{ route('barangs.index', ['keadaan_barang' => 'Kurang Baik']) }}">
+            <a href="{{ route('barangs.index', ['keadaan_barang' => 'Kurang_Baik']) }}">
                 <div class="card-body">
                     <h5 class="text-lg font-semibold">Barang Kurang Baik</h5>
                     <p class="text-2xl font-bold">{{ $jumlahKurangBaik }} barang</p>
@@ -31,10 +31,10 @@
             </a>
         </div>
         <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg">
-            <a href="{{ route('barangs.index', ['keadaan_barang' => 'Buruk']) }}">
+            <a href="{{ route('barangs.index', ['keadaan_barang' => 'Rusak']) }}">
                 <div class="card-body">
                     <h5 class="text-lg font-semibold">Barang Rusak</h5>
-                    <p class="text-2xl font-bold">{{ $jumlahBuruk }} barang</p>
+                    <p class="text-2xl font-bold">{{ $jumlahRusak }} barang</p>
                 </div>
             </a>
         </div>
@@ -86,11 +86,7 @@
                     <td class="border border-gray-300 px-4 py-2 text-center">
                         <a href="{{ route('barangs.show', $barang->id) }}" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Lihat</a>
                         <a href="{{ route('barangs.edit', $barang->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Edit</a>
-                        <form action="{{ route('barangs.destroy', $barang->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Apakah Anda yakin ingin menghapus?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Hapus</button>
-                        </form>
+                        <button type="button" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="confirmDeletion({{ $barang->id }})">Hapus</button>
                     </td>
                 </tr>
                 @endforeach
@@ -135,6 +131,48 @@
 
         // Reload page with updated URL parameters
         window.location.search = urlParams.toString();
+    }
+</script>
+
+<!-- Tambahkan SweetAlert dan script konfirmasi hapus -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDeletion(barangId) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Barang akan dihapus secara permanen!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Buat form untuk mengirimkan delete request
+                const form = document.createElement('form');
+                form.action = `/barangs/${barangId}`;
+                form.method = 'POST';
+                
+                // Tambahkan CSRF token
+                const csrfField = document.createElement('input');
+                csrfField.type = 'hidden';
+                csrfField.name = '_token';
+                csrfField.value = '{{ csrf_token() }}';
+                form.appendChild(csrfField);
+
+                // Tambahkan metode DELETE
+                const methodField = document.createElement('input');
+                methodField.type = 'hidden';
+                methodField.name = '_method';
+                methodField.value = 'DELETE';
+                form.appendChild(methodField);
+
+                // Tambahkan form ke body dan submit
+                document.body.appendChild(form);
+                form.submit();
+            }
+        });
     }
 </script>
 @endsection

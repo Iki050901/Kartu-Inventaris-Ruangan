@@ -15,6 +15,7 @@ class UnitSatuanKerjaController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
+        $rows = $request->input('rows', 10);
     
         $query = UnitSatuanKerja::query();
     
@@ -22,7 +23,7 @@ class UnitSatuanKerjaController extends Controller
             $query->where('nama_satuan_kerja', 'LIKE', "%{$search}%");
         }
     
-        $unitSatuanKerjas = $query->paginate(10);
+        $unitSatuanKerjas = $query->paginate($rows);
     
         return view('unit_satuan_kerjas.index', compact('unitSatuanKerjas'));
     }
@@ -38,6 +39,7 @@ class UnitSatuanKerjaController extends Controller
     // Menyimpan satuan kerja baru ke database
     public function store(Request $request)
     {
+        
         $request->validate([
             'nama_satuan_kerja' => 'required|string|max:255',
             'nama_kepala' => 'required|string|max:255',

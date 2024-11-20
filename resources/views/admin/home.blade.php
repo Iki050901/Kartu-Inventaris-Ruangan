@@ -5,10 +5,10 @@
   <h1 class="font-arial mb-6 font-extrabold" style="font-size: 35px; line-height: 52px; text-align: left; color:#2284DF">
     DASHBOARD
   </h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
     <!-- Bagian Kiri: Card Total Satuan Kerja, Barang, Pegawai -->
     <div class="space-y-4">
       <!-- Total Satuan Kerja -->
+      <a href="{{ route('unit_satuan_kerjas.index') }}">
       <div class="bg-white text-black p-1 rounded-lg shadow-lg">
         <div class="card-body">
           <div class="flex items-center gap-6">
@@ -31,8 +31,10 @@
           </div>
         </div>
       </div>
+      </a>
 
       <!-- Total Barang -->
+      <a href="{{ route('laporan.barang') }}">
       <div class="bg-white text-black p-1 rounded-lg shadow-lg">
         <div class="card-body">
           <div class="flex items-center gap-6">
@@ -55,9 +57,11 @@
             </div>
           </div>
         </div>
+        </a>
       </div>
 
       <!-- Total Pegawai -->
+      <a href="{{ route('data_pegawais.index') }}">
       <div class="bg-white text-black p-1 rounded-lg shadow-lg">
         <div class="card-body">
           <div class="flex items-center gap-6">
@@ -79,21 +83,9 @@
             </div>
           </div>
         </div>
+        </a>
       </div>
     </div>
-
-    <!-- Bagian Kanan: Grafik Barang Berdasarkan Keadaan -->
-    <div class="bg-white shadow rounded-lg p-4">
-      <h5 class="font-bold">Grafik Barang Berdasarkan Keadaan</h5>
-      <canvas id="conditionChart"></canvas>
-    </div>
-  </div>
-
-  <!-- Baris Kedua: Grafik Barang Berdasarkan Tahun -->
-  <div class="bg-white shadow rounded-lg p-4">
-    <h5 class="font-bold">Grafik Barang Berdasarkan Tahun</h5>
-    <canvas id="yearChart"></canvas>
-  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -103,7 +95,7 @@
   new Chart(conditionCtx, {
     type: 'bar',
     data: {
-      labels: ['Baik', 'Kurang Baik', 'Buruk'],
+      labels: ['Baik', 'Kurang Baik', 'Rusak'],
       datasets: [{
         label: 'Jumlah Barang',
         data: [{
@@ -116,7 +108,7 @@
           }
         }, {
           {
-            $barangBuruk
+            $barangRusak
           }
         }],
         backgroundColor: ['#4CAF50', '#FFEB3B', '#F44336'],
@@ -124,54 +116,6 @@
         borderWidth: 1
       }]
     },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false
-        },
-        datalabels: {
-          anchor: 'end',
-          align: 'top',
-          font: {
-            weight: 'bold',
-            size: 10
-          },
-          color: 'black',
-          formatter: function(value) {
-            return Math.round(value); // Tidak menggunakan desimal
-          }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            precision: 0 // Menghilangkan angka desimal pada sumbu y
-          }
-        }
-      }
-    }
-  });
-
-  // Grafik Barang Berdasarkan Tahun
-  const yearCtx = document.getElementById('yearChart').getContext('2d');
-  new Chart(yearCtx, {
-    type: 'bar',
-    data: {
-      labels: {
-        !!json_encode($grafikTahun - > pluck('tahun')) !!
-      },
-      datasets: [{
-        label: 'Jumlah Barang',
-        data: {
-          !!json_encode($grafikTahun - > pluck('jumlah')) !!
-        },
-        backgroundColor: '#42A5F5',
-        borderColor: '#1E88E5',
-        borderWidth: 1
-      }]
-    }
     options: {
       responsive: true,
       plugins: {

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto p-4">
     <h1 class="font-arial mb-6 font-extrabold" style="font-size: 35px; line-height: 52px; text-align: left; color:#2284DF">
-        DATA SATUAN KERJA
+        UNIT SATUAN KERJA
     </h1>
 
     <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-x-auto">

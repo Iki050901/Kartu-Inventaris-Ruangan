@@ -8,13 +8,13 @@
 
     <div class="space-y-4 w-12/13 mx-auto p-8 bg-white shadow-lg rounded-lg">
         <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">nama</label>
-            <p class="mt-1 block w-3/4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3">{{ $user->name }}"</p>
+            <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
+            <p class="mt-1 block w-3/4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3">{{ $user->name }}</p>
         </div>
         
         <div>
             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <p class="mt-1 block w-3/4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3">{{ $user->email }}"</p>
+            <p class="mt-1 block w-3/4 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3">{{ $user->email }}</p>
         </div>
         
         <!-- Input untuk Password -->

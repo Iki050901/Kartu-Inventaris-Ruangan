@@ -67,8 +67,10 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded shadow hover:bg-blue-700">Simpan</button>
-                <a href="{{ route('admins.index') }}" class="bg-gray-600 text-white py-2 px-4 rounded shadow hover:bg-gray-700">Batal</a>
+                <div class="flex justify-end space-x-4 mt-4">
+                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded shadow hover:bg-blue-700">Simpan</button>
+                    <a href="{{ route('admins.index') }}" class="bg-gray-600 text-white py-2 px-4 rounded shadow hover:bg-gray-700">Batal</a>
+                </div>
             </form>
         </div>
     </div>

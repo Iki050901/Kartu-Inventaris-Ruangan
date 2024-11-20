@@ -61,18 +61,29 @@
                     @foreach($unitSatuanKerjas as $unitSatuanKerja)
                     <tr class="border-b">
                         <td class="py-2 px-4">{{ $unitSatuanKerja->nama_satuan_kerja }}</td>
-                        <td class="py-2 px-4">{{ $unitSatuanKerja->deskripsi }}</td>
-                        <td class="py-2 px-4">
-                            <a href="{{ route('unit_satuan_kerjas.show', $unitSatuanKerja->id) }}" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Lihat</a>
-                            <a href="{{ route('unit_satuan_kerjas.edit', $unitSatuanKerja->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Edit</a>
-                            <form action="{{ route('unit_satuan_kerjas.destroy', $unitSatuanKerja->id) }}" method="POST" class="inline-block">
+                        <td class="py-2 px-4 text-justify">{{ $unitSatuanKerja->deskripsi }}</td>
+                        <td class="py-2 px-4 flex space-x-2">
+                            <a href="{{ route('unit_satuan_kerjas.show', $unitSatuanKerja->id) }}"
+                                class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                                Lihat
+                            </a>
+                            <a href="{{ route('unit_satuan_kerjas.edit', $unitSatuanKerja->id) }}"
+                                class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+                                Edit
+                            </a>
+                            <form action="{{ route('unit_satuan_kerjas.destroy', $unitSatuanKerja->id) }}"
+                                method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                                <button type="submit"
+                                    class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                    onclick="return confirm('Yakin ingin menghapus?')">
+                                    Hapus
+                                </button>
                             </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                        </td
+                            </tr>
+                        @endforeach
                 </tbody>
             </table>
 

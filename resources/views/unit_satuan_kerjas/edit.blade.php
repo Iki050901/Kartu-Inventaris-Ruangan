@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto px-4">
     <h1 class="font-arial mb-6 font-extrabold text-3xl" style="color:#2284DF">
-        DATA SATUAN KERJA
+        UNIT SATUAN KERJA
     </h1>
 
     <div class="bg-white border border-gray-200 rounded-lg shadow-md p-6">
@@ -51,7 +51,7 @@
 
             <!-- Action Buttons -->
             <div class="flex space-x-4 mt-6">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Update</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Perbarui</button>
                 <a href="{{ route('unit_satuan_kerjas.index') }}" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400">Kembali</a>
             </div>
         </form>

@@ -84,7 +84,7 @@
                             <td class="border border-gray-300 px-4 py-2 text-center">{{ $unit->jumlah_barang }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-green-600">{{ $unit->barang_baik }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-yellow-600">{{ $unit->barang_kurang_baik }}</td>
-                            <td class="border border-gray-300 px-4 py-2 text-center text-red-600">{{ $unit->barang_buruk}}</td>
+                            <td class="border border-gray-300 px-4 py-2 text-center text-red-600">{{ $unit->barang_rusak}}</td>
                         </tr>
                         @endforeach
                     </tbody>

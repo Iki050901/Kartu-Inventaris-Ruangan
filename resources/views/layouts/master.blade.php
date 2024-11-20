@@ -19,7 +19,7 @@
     <nav class="bg-black p-4">
         <div class="container mx-auto flex items-center">
             <!-- Logo dan Nama Web -->
-            <a href="#" class="flex items-center">
+            <a href="{{ route('dashboard') }}" class="flex items-center">
                 <img src="{{ asset('img/Kabupaten Garut.svg') }}" alt="Logo Kabupaten Garut" class="w-10 h-10">
                 <span class="text-white text-sm font-medium ml-3 max-w-xs">
                     DINAS KOMUNIKASI DAN INFORMATIKA <br> KABUPATEN GARUT
@@ -49,12 +49,13 @@
                 </li>
                 <li>
                     <a href="{{ route('units.index') }}" class="flex items-center p-3 text-white hover:bg-blue-400 hover:text-blue-700 transition-all duration-200 {{ request()->routeIs('units.index') || request()->routeIs('units.create') || request()->routeIs('units.edit') || request()->routeIs('units.show') ? 'bg-blue-400 text-blue-700' : '' }}">
-                        <svg class="w-6 h-6 mr-3 sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="w-6 h-6 mr-2 sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M11 0H3C2.20435 0 1.44129 0.31607 0.87868 0.87868C0.31607 1.44129 0 2.20435 0 3L0 24H14V3C14 2.20435 13.6839 1.44129 13.1213 0.87868C12.5587 0.31607 11.7956 0 11 0V0ZM6 19H3V17H6V19ZM6 15H3V13H6V15ZM6 11H3V9H6V11ZM6 7H3V5H6V7ZM11 19H8V17H11V19ZM11 15H8V13H11V15ZM11 11H8V9H11V11ZM11 7H8V5H11V7ZM21 5H16V24H24V8C24 7.20435 23.6839 6.44129 23.1213 5.87868C22.5587 5.31607 21.7956 5 21 5ZM21 19H19V17H21V19ZM21 15H19V13H21V15ZM21 11H19V9H21V11Z" />
                         </svg>
-                        <span class="ml-3 sidebar-text">Instansi</span>
+                        <span class="ml-2 sidebar-text">Data Instansi</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="{{ route('laporan.super') }}" class="flex items-center p-3 text-white hover:bg-blue-400 hover:text-blue-700 transition-all duration-200 {{ request()->routeIs('laporan.super') ? 'bg-blue-400 text-blue-700' : '' }}">
                         <svg class="w-6 h-6 sidebar-icon" viewBox="0 0 24 24" fill="currentColor">

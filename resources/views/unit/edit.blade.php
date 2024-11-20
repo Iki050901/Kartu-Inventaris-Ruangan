@@ -8,11 +8,19 @@
         <h1 class="font-arial mb-6 font-extrabold" style="font-size: 35px; line-height: 52px; text-align: left; color:#2284DF">DATA INSTANSI</h1>
     </div>
 
+    <!-- Notifikasi Sukses -->
+    @if(session('success'))
+        <div class="bg-green-100 text-green-700 border border-green-300 p-4 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
+    
+
     <!-- Form Edit Unit dalam Card -->
     <div class="bg-white p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-bold mb-4">Edit Instansi</h2>
         
-        <form action="{{ route('units.update', $unit->id) }}" method="POST">
+        <form id="updateForm" action="{{ route('units.update', $unit->id) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -109,10 +117,39 @@
             </div>
 
             <div class="flex space-x-4 mt-6">
-                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded shadow hover:bg-blue-700">Update</button>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded shadow hover:bg-blue-700">Perbarui</button>
                 <a href="{{ route('units.index') }}" class="bg-gray-600 text-white py-2 px-4 rounded shadow hover:bg-gray-700">Batal</a>
             </div>
         </form>
     </div>
 </div>
+
+<!-- JavaScript untuk redirect dan notifikasi -->
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form submit default
+        
+        // Mengirim data form menggunakan Fetch API
+        fetch(this.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams(new FormData(this)).toString()
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Redirect ke halaman instansi dengan notifikasi sukses
+                window.location.href = "{{ route('units.index') }}";
+                alert('Instansi berhasil diperbarui!'); // Menampilkan notifikasi
+            } else {
+                alert('Terjadi kesalahan saat memperbarui data.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+
 @endsection

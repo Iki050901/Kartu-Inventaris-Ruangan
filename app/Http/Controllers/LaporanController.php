@@ -50,7 +50,7 @@ class LaporanController extends Controller
                 $query->where('unit_id', $unit->id);
             })->where('keadaan_barang', 'kurang_baik')->count();
 
-            $unit->barang_buruk = Barang::whereHas('ruangan.unitSatuanKerja', function ($query) use ($unit) {
+            $unit->barang_rusak = Barang::whereHas('ruangan.unitSatuanKerja', function ($query) use ($unit) {
                 $query->where('unit_id', $unit->id);
             })->where('keadaan_barang', 'rusak')->count();
         }
@@ -87,7 +87,7 @@ class LaporanController extends Controller
                 $query->where('unit_id', $unit->id);
             })->where('keadaan_barang', 'kurang_baik')->count();
 
-            $unit->barang_buruk = Barang::whereHas('ruangan.unitSatuanKerja', function ($query) use ($unit) {
+            $unit->barang_rusak = Barang::whereHas('ruangan.unitSatuanKerja', function ($query) use ($unit) {
                 $query->where('unit_id', $unit->id);
             })->where('keadaan_barang', 'rusak')->count();
         }
@@ -133,7 +133,7 @@ class LaporanController extends Controller
                 $query->where('unit_satuan_kerja_id', $unit->id);
             })->count();
 
-            // Hitung barang berdasarkan kondisi (baik, kurang baik, buruk)
+            // Hitung barang berdasarkan kondisi (baik, kurang baik, rusak)
             $unit->barang_baik = Barang::whereHas('ruangan', function ($query) use ($unit) {
                 $query->where('unit_satuan_kerja_id', $unit->id);
             })->where('keadaan_barang', 'baik')->count();
@@ -142,7 +142,7 @@ class LaporanController extends Controller
                 $query->where('unit_satuan_kerja_id', $unit->id);
             })->where('keadaan_barang', 'kurang_baik')->count();
 
-            $unit->barang_buruk = Barang::whereHas('ruangan', function ($query) use ($unit) {
+            $unit->barang_rusak = Barang::whereHas('ruangan', function ($query) use ($unit) {
                 $query->where('unit_satuan_kerja_id', $unit->id);
             })->where('keadaan_barang', 'rusak')->count();
         }
